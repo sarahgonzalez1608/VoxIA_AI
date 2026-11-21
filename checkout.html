@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Checkout · VoxIA AI S.A.S.</title>
+<meta name="description" content="VoxIA AI S.A.S.: Soluciones avanzadas de IA conversacional multilingüe, agentes de voz inteligentes y Cross-Lingual RAG con cero alucinaciones.">
+<link rel="icon" type="image/png" href="img/logo-icon.png">
+<link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+<header class="cab">
+  <a class="logo" href="index.html" aria-label="VoxIA AI S.A.S., inicio">
+    <img class="logo-img" src="img/logo-icon.png" alt="VoxIA AI S.A.S. Isotipo" width="36" height="36">
+    <span>Vox<b>IA</b> AI <small class="logo-legal">S.A.S.</small></span>
+  </a>
+  <nav>
+    <a href="index.html#catalogo">Catálogo</a>
+    <a href="index.html#bsc">BSC &amp; Métricas</a>
+    <a href="index.html#infra">Infraestructura</a>
+    <a href="index.html#rse">RSE</a>
+    <a href="carrito.html">Carrito <span id="badge-carrito" class="badge">0</span></a>
+  </nav>
+</header>
+<main class="wrap">
+  <h1>Checkout Corporativo</h1>
+  <div id="checkout-vacio" class="panel vacio" hidden><p>Tu carrito está vacío.</p><a class="btn" href="index.html">Ver catálogo</a></div>
+  <div id="checkout">
+    <ol class="pasos"><li id="ind1" class="activo">1 · Envío / Aprovisionamiento</li><li id="ind2">2 · Pago simulado</li></ol>
+    <div class="dos-col">
+      <div>
+        <section id="paso1" class="panel">
+          <h2>Paso 1 · Datos de Facturación y Despacho</h2>
+          <p class="nota">Usa un nombre ficticio. Plataforma segura bajo Ley 1581 de 2012 y GDPR. No pedimos contraseñas, documentos reales ni datos bancarios.</p>
+          <label for="nombre">Nombre o Razón Social (ficticio)</label>
+          <input id="nombre" type="text" maxlength="40" autocomplete="off" placeholder="Ej.: Empresa Global S.A.S.">
+          <p id="err-nombre" class="msg err" aria-live="polite"></p>
+          <label for="pais">País de destino</label>
+          <select id="pais"></select>
+          <fieldset class="opciones"><legend>Servicio de aprovisionamiento / despliegue</legend>
+            <label><input type="radio" name="servicio" value="Estándar" checked> <span>Despliegue Estándar Cloud</span> <em id="costo-estandar"></em></label>
+            <label><input type="radio" name="servicio" value="Express"> <span>Despliegue Express Prioritario</span> <em id="costo-express"></em></label>
+          </fieldset>
+          <p id="aviso-envio" class="msg ok"></p>
+          <button type="button" id="btn-continuar" class="btn">Continuar al pago</button>
+        </section>
+        <section id="paso2" class="panel" hidden>
+          <h2>Paso 2 · Pago simulado</h2>
+          <p class="nota">Simulación de pago: pasarelas integradas DIAN (Wompi, PSE, Stripe, Tarjetas y PayPal). No se cobra dinero real.</p>
+          <fieldset class="opciones"><legend>Método de pago</legend>
+            <label><input type="radio" name="pago" value="Tarjeta de crédito" checked> <span>Tarjeta de crédito / Débito (Stripe / Wompi)</span></label>
+            <label><input type="radio" name="pago" value="PSE"> <span>PSE (Transferencia bancaria Colombia)</span></label>
+            <label><input type="radio" name="pago" value="Nequi"> <span>Nequi / Daviplata</span></label>
+            <label><input type="radio" name="pago" value="PayPal"> <span>PayPal (Cobro internacional en USD)</span></label>
+          </fieldset>
+          <div class="fila"><button type="button" id="btn-volver" class="btn sec">← Volver a envío</button><button type="button" id="btn-pagar" class="btn">Pagar (simulado)</button></div>
+        </section>
+      </div>
+      <aside id="resumen" class="panel resumen"></aside>
+    </div>
+  </div>
+</main>
+<footer class="pie">
+  <p><strong>VoxIA AI S.A.S.</strong> · NIT 901.845.210-4 · Cumplimiento Ley 1581 de 2012 (Habeas Data SIC), SOC 2 Type II y GDPR.</p>
+  <p style="margin-top:6px;font-size:0.8rem;color:var(--text-muted)">Sitio académico de simulación — Diplomado en E-commerce y Negocios Internacionales Digitales. Usa Google Analytics 4 con fines didácticos. No procesa pagos reales.</p>
+</footer>
+<script src="js/config.js"></script>
+<script src="js/analytics.js"></script>
+<script src="js/productos.js"></script>
+<script src="js/carrito.js"></script>
+<script src="js/pag-checkout.js"></script>
+</body>
+</html>
